@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — FishDex</title>
+  <style>
+    :root {
+      --bg: #F4F8F5;
+      --surface: #FFFFFF;
+      --text: #1A2E20;
+      --text-muted: #5A7A65;
+      --accent: #2D6A4F;
+      --accent-light: #EAF3EE;
+      --border: #D6E8DC;
+      --nav-bg: #FFFFFF;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0E1C13; --surface: #162B1D; --text: #E2EEE6;
+        --text-muted: #7EA889; --accent: #4A9E72; --accent-light: #1A3324;
+        --border: #243D2C; --nav-bg: #111F17;
+      }
+    }
+    :root[data-theme="light"] {
+      --bg: #F4F8F5; --surface: #FFFFFF; --text: #1A2E20;
+      --text-muted: #5A7A65; --accent: #2D6A4F; --accent-light: #EAF3EE;
+      --border: #D6E8DC; --nav-bg: #FFFFFF;
+    }
+    :root[data-theme="dark"] {
+      --bg: #0E1C13; --surface: #162B1D; --text: #E2EEE6;
+      --text-muted: #7EA889; --accent: #4A9E72; --accent-light: #1A3324;
+      --border: #243D2C; --nav-bg: #111F17;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .nav-back:hover { text-decoration: underline; }
+    .nav-divider { width: 1px; height: 18px; background: var(--border); }
+    .nav-logo { font-size: 20px; }
+    .nav-name { font-size: 16px; font-weight: 800; color: var(--accent); letter-spacing: -0.3px; }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .doc-header {
+      margin-bottom: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .doc-title {
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-wrap: balance;
+      margin-bottom: 10px;
+    }
+    .doc-updated { font-size: 13px; color: var(--text-muted); }
+
+    .toc {
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+    .toc-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .toc ol {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .toc a {
+      font-size: 14px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .toc a:hover { color: var(--accent); text-decoration: underline; }
+
+    section { margin-bottom: 40px; }
+    section:last-child { margin-bottom: 0; }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 14px;
+      padding-top: 8px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    h2 .sec-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    ul li {
+      font-size: 15px;
+      color: var(--text);
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .highlight-box {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    footer {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 24px 48px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-back">← Back</a>
+    <div class="nav-divider"></div>
+    <span class="nav-logo">🎣</span>
+    <span class="nav-name">FishDex</span>
+  </nav>
+
+  <div class="page">
+    <div class="doc-header">
+      <div class="doc-eyebrow">Legal</div>
+      <h1 class="doc-title">Privacy Policy</h1>
+      <p class="doc-updated">Last updated: July 2026</p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-label">Contents</div>
+      <ol>
+        <li><a href="#collect">1. Information We Collect</a></li>
+        <li><a href="#use">2. How We Use Your Information</a></li>
+        <li><a href="#share">3. How We Share Your Information</a></li>
+        <li><a href="#retention">4. Data Retention</a></li>
+        <li><a href="#rights">5. Your Rights</a></li>
+        <li><a href="#children">6. Children's Privacy</a></li>
+        <li><a href="#security">7. Security</a></li>
+        <li><a href="#changes">8. Changes</a></li>
+        <li><a href="#contact">9. Contact</a></li>
+      </ol>
+    </div>
+
+    <p>FishDex ("we," "us," or "our") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and share information about you when you use the FishDex mobile application.</p>
+
+    <section id="collect">
+      <h2><span class="sec-num">01</span> Information We Collect</h2>
+      <p><strong>Account Information:</strong> Email address, username, display name, and profile photo when you create an account.</p>
+      <p><strong>Catch Data:</strong> Photos, species, weight, length, location coordinates, and notes you log voluntarily.</p>
+      <p><strong>Location Data:</strong> GPS coordinates you attach to catches or use when joining location-based clubs and tournaments. We never collect background location without your explicit permission.</p>
+      <p><strong>Usage Data:</strong> App interactions, crash reports, and performance data to improve the app.</p>
+      <p><strong>Communications:</strong> Messages sent within club feeds, league chats, and tournament chats.</p>
+    </section>
+
+    <section id="use">
+      <h2><span class="sec-num">02</span> How We Use Your Information</h2>
+      <ul>
+        <li>To provide and improve the FishDex service</li>
+        <li>To display your catches, profile, and competition standings</li>
+        <li>To send password reset emails and service notifications</li>
+        <li>To investigate reports of policy violations and enforce our Terms of Service</li>
+      </ul>
+      <div class="highlight-box">
+        FishDex administrators may review user-generated content — including messages, posts, catches, and competition submissions — when investigating reported violations. This review is performed solely for moderation and safety purposes.
+      </div>
+    </section>
+
+    <section id="share">
+      <h2><span class="sec-num">03</span> How We Share Your Information</h2>
+      <p>We do not sell your personal information.</p>
+      <p><strong>Public Profile:</strong> Your username, display name, and public catches are visible to other users.</p>
+      <p><strong>Service Providers:</strong> We use Supabase for database and authentication services. They process data on our behalf under confidentiality obligations.</p>
+      <p><strong>Legal:</strong> We may disclose information if required by law or to protect the rights and safety of our users.</p>
+    </section>
+
+    <section id="retention">
+      <h2><span class="sec-num">04</span> Data Retention</h2>
+      <p>We retain your data while your account is active. When you delete your account, we will delete your personal data within 30 days, except where retention is required by law.</p>
+    </section>
+
+    <section id="rights">
+      <h2><span class="sec-num">05</span> Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you</li>
+        <li>Correct inaccurate data</li>
+        <li>Request deletion of your account and associated data</li>
+        <li>Export your catch data</li>
+      </ul>
+      <p>Exercise these rights by contacting us at <a href="mailto:support@fishdex.app" style="color:var(--accent);">support@fishdex.app</a> or through the in-app account settings.</p>
+    </section>
+
+    <section id="children">
+      <h2><span class="sec-num">06</span> Children's Privacy</h2>
+      <p>FishDex is not directed to children under 13. We do not knowingly collect personal information from children under 13. If you believe we have inadvertently collected such information, please contact us immediately.</p>
+    </section>
+
+    <section id="security">
+      <h2><span class="sec-num">07</span> Security</h2>
+      <p>We use industry-standard security measures including encryption in transit and at rest. No system is 100% secure, and we cannot guarantee absolute security of your data.</p>
+    </section>
+
+    <section id="changes">
+      <h2><span class="sec-num">08</span> Changes</h2>
+      <p>We may update this Privacy Policy periodically. We will notify you of material changes through the app. Continued use after changes constitutes acceptance of the updated policy.</p>
+    </section>
+
+    <section id="contact">
+      <h2><span class="sec-num">09</span> Contact</h2>
+      <p>Privacy questions or requests: <a href="mailto:support@fishdex.app" style="color:var(--accent);">support@fishdex.app</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <span>&copy; 2026 FishDex. All rights reserved.</span>
+    <span><a href="index.html">Legal Home</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a></span>
+  </footer>
+</body>
+</html>

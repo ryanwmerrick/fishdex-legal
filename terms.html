@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — FishDex</title>
+  <style>
+    :root {
+      --bg: #F4F8F5;
+      --surface: #FFFFFF;
+      --text: #1A2E20;
+      --text-muted: #5A7A65;
+      --accent: #2D6A4F;
+      --accent-light: #EAF3EE;
+      --border: #D6E8DC;
+      --nav-bg: #FFFFFF;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0E1C13; --surface: #162B1D; --text: #E2EEE6;
+        --text-muted: #7EA889; --accent: #4A9E72; --accent-light: #1A3324;
+        --border: #243D2C; --nav-bg: #111F17;
+      }
+    }
+    :root[data-theme="light"] {
+      --bg: #F4F8F5; --surface: #FFFFFF; --text: #1A2E20;
+      --text-muted: #5A7A65; --accent: #2D6A4F; --accent-light: #EAF3EE;
+      --border: #D6E8DC; --nav-bg: #FFFFFF;
+    }
+    :root[data-theme="dark"] {
+      --bg: #0E1C13; --surface: #162B1D; --text: #E2EEE6;
+      --text-muted: #7EA889; --accent: #4A9E72; --accent-light: #1A3324;
+      --border: #243D2C; --nav-bg: #111F17;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .nav-back:hover { text-decoration: underline; }
+    .nav-divider { width: 1px; height: 18px; background: var(--border); }
+    .nav-logo { font-size: 20px; }
+    .nav-name { font-size: 16px; font-weight: 800; color: var(--accent); letter-spacing: -0.3px; }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .doc-header {
+      margin-bottom: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .doc-title {
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-wrap: balance;
+      margin-bottom: 10px;
+    }
+    .doc-updated { font-size: 13px; color: var(--text-muted); }
+
+    .toc {
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+    .toc-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .toc ol {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .toc a {
+      font-size: 14px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .toc a:hover { color: var(--accent); text-decoration: underline; }
+
+    section { margin-bottom: 40px; }
+    section:last-child { margin-bottom: 0; }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 14px;
+      padding-top: 8px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    h2 .sec-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    ul li {
+      font-size: 15px;
+      color: var(--text);
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .highlight-box {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    footer {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 24px 48px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-back">← Back</a>
+    <div class="nav-divider"></div>
+    <span class="nav-logo">🎣</span>
+    <span class="nav-name">FishDex</span>
+  </nav>
+
+  <div class="page">
+    <div class="doc-header">
+      <div class="doc-eyebrow">Legal</div>
+      <h1 class="doc-title">Terms of Service</h1>
+      <p class="doc-updated">Last updated: July 2026</p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-label">Contents</div>
+      <ol>
+        <li><a href="#acceptance">1. Acceptance</a></li>
+        <li><a href="#eligibility">2. Eligibility</a></li>
+        <li><a href="#accounts">3. User Accounts</a></li>
+        <li><a href="#content">4. User-Generated Content</a></li>
+        <li><a href="#guidelines">5. Community Guidelines</a></li>
+        <li><a href="#moderation">6. Content Moderation</a></li>
+        <li><a href="#reporting">7. Reporting &amp; Blocking</a></li>
+        <li><a href="#tournaments">8. Tournaments &amp; Competitions</a></li>
+        <li><a href="#ip">9. Intellectual Property</a></li>
+        <li><a href="#disclaimers">10. Disclaimers</a></li>
+        <li><a href="#liability">11. Limitation of Liability</a></li>
+        <li><a href="#changes">12. Changes</a></li>
+        <li><a href="#contact">13. Contact</a></li>
+      </ol>
+    </div>
+
+    <p>Welcome to FishDex ("we," "us," or "our"). By downloading or using the FishDex mobile application, you agree to these Terms of Service.</p>
+
+    <section id="acceptance">
+      <h2><span class="sec-num">01</span> Acceptance</h2>
+      <p>By creating an account or using FishDex, you agree to be bound by these Terms. If you do not agree, do not use the app.</p>
+    </section>
+
+    <section id="eligibility">
+      <h2><span class="sec-num">02</span> Eligibility</h2>
+      <p>You must be at least 13 years old to use FishDex. By using the app, you represent that you meet this requirement.</p>
+    </section>
+
+    <section id="accounts">
+      <h2><span class="sec-num">03</span> User Accounts</h2>
+      <p>You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. Notify us immediately at <a href="mailto:support@fishdex.app" style="color:var(--accent);">support@fishdex.app</a> of any unauthorized use.</p>
+    </section>
+
+    <section id="content">
+      <h2><span class="sec-num">04</span> User-Generated Content</h2>
+      <p>You retain ownership of content you post. By posting, you grant FishDex a non-exclusive, royalty-free license to display and distribute your content within the app. You are solely responsible for your content and must not post anything that is illegal, harmful, or violates others' rights.</p>
+    </section>
+
+    <section id="guidelines">
+      <h2><span class="sec-num">05</span> Community Guidelines</h2>
+      <p>You agree not to post content that is:</p>
+      <ul>
+        <li>Violent, threatening, or harassing</li>
+        <li>Sexually explicit or inappropriate</li>
+        <li>Spam or misleading</li>
+        <li>Infringing on intellectual property rights</li>
+        <li>In violation of any applicable law</li>
+      </ul>
+    </section>
+
+    <section id="moderation">
+      <h2><span class="sec-num">06</span> Content Moderation</h2>
+      <p>We reserve the right to remove content or suspend or terminate accounts that violate these Terms.</p>
+      <div class="highlight-box">
+        FishDex administrators may review any user-generated content — including messages, posts, catches, and competition submissions — when investigating reports of violations. This review capability exists solely for moderation and safety purposes. We aim to review reported content within 24 hours.
+      </div>
+    </section>
+
+    <section id="reporting">
+      <h2><span class="sec-num">07</span> Reporting &amp; Blocking</h2>
+      <p>Users may report content or other users they believe violate these Terms. We provide in-app blocking tools so you can control your own experience.</p>
+    </section>
+
+    <section id="tournaments">
+      <h2><span class="sec-num">08</span> Tournaments &amp; Competitions</h2>
+      <p>Tournament results are subject to host review. FishDex is not responsible for disputes arising from tournament outcomes. All tournaments are free to enter. Any awards or recognition are at the discretion of the tournament host.</p>
+    </section>
+
+    <section id="ip">
+      <h2><span class="sec-num">09</span> Intellectual Property</h2>
+      <p>The FishDex name, logo, and application design are owned by FishDex and may not be used without permission.</p>
+    </section>
+
+    <section id="disclaimers">
+      <h2><span class="sec-num">10</span> Disclaimers</h2>
+      <p>FishDex is provided "as is" without warranties of any kind. We are not responsible for any injury, loss, or damage arising from fishing activities.</p>
+    </section>
+
+    <section id="liability">
+      <h2><span class="sec-num">11</span> Limitation of Liability</h2>
+      <p>To the maximum extent permitted by law, FishDex shall not be liable for indirect, incidental, or consequential damages arising from your use of the app.</p>
+    </section>
+
+    <section id="changes">
+      <h2><span class="sec-num">12</span> Changes</h2>
+      <p>We may update these Terms at any time. Continued use of the app after changes constitutes acceptance of the new Terms.</p>
+    </section>
+
+    <section id="contact">
+      <h2><span class="sec-num">13</span> Contact</h2>
+      <p>Questions about these Terms? Email us at <a href="mailto:support@fishdex.app" style="color:var(--accent);">support@fishdex.app</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <span>&copy; 2026 FishDex. All rights reserved.</span>
+    <span><a href="index.html">Legal Home</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></span>
+  </footer>
+</body>
+</html>
