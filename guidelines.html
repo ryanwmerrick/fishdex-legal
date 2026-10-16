@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Guidelines — FishDex</title>
+  <style>
+    :root {
+      --bg: #F4F8F5;
+      --surface: #FFFFFF;
+      --text: #1A2E20;
+      --text-muted: #5A7A65;
+      --accent: #2D6A4F;
+      --accent-light: #EAF3EE;
+      --border: #D6E8DC;
+      --nav-bg: #FFFFFF;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0E1C13; --surface: #162B1D; --text: #E2EEE6;
+        --text-muted: #7EA889; --accent: #4A9E72; --accent-light: #1A3324;
+        --border: #243D2C; --nav-bg: #111F17;
+      }
+    }
+    :root[data-theme="light"] {
+      --bg: #F4F8F5; --surface: #FFFFFF; --text: #1A2E20;
+      --text-muted: #5A7A65; --accent: #2D6A4F; --accent-light: #EAF3EE;
+      --border: #D6E8DC; --nav-bg: #FFFFFF;
+    }
+    :root[data-theme="dark"] {
+      --bg: #0E1C13; --surface: #162B1D; --text: #E2EEE6;
+      --text-muted: #7EA889; --accent: #4A9E72; --accent-light: #1A3324;
+      --border: #243D2C; --nav-bg: #111F17;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    nav {
+      background: var(--nav-bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-back {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .nav-back:hover { text-decoration: underline; }
+    .nav-divider { width: 1px; height: 18px; background: var(--border); }
+    .nav-logo { font-size: 20px; }
+    .nav-name { font-size: 16px; font-weight: 800; color: var(--accent); letter-spacing: -0.3px; }
+
+    .page {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    .doc-header {
+      margin-bottom: 40px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .doc-title {
+      font-size: clamp(26px, 4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--text);
+      text-wrap: balance;
+      margin-bottom: 10px;
+    }
+    .doc-updated { font-size: 13px; color: var(--text-muted); }
+
+    .toc {
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 40px;
+    }
+    .toc-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .toc ol {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .toc a {
+      font-size: 14px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .toc a:hover { color: var(--accent); text-decoration: underline; }
+
+    section { margin-bottom: 40px; }
+    section:last-child { margin-bottom: 0; }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 14px;
+      padding-top: 8px;
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+    }
+    h2 .sec-num {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    p { font-size: 15px; color: var(--text); margin-bottom: 12px; }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    ul li {
+      font-size: 15px;
+      color: var(--text);
+      padding-left: 20px;
+      position: relative;
+    }
+    ul li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .highlight-box {
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    footer {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 24px 48px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <!-- Generated by scripts/build-guidelines-page.mjs from src/data/legalText.ts (GUIDELINES). Do not edit by hand. -->
+  <nav>
+    <a href="index.html" class="nav-back">← Back</a>
+    <div class="nav-divider"></div>
+    <span class="nav-logo">🎣</span>
+    <span class="nav-name">FishDex</span>
+  </nav>
+
+  <div class="page">
+    <div class="doc-header">
+      <div class="doc-eyebrow">Legal</div>
+      <h1 class="doc-title">Community Guidelines</h1>
+      <p class="doc-updated">Last updated: October 2026</p>
+    </div>
+
+    <div class="toc">
+      <div class="toc-label">Contents</div>
+      <ol>
+        <li><a href="#g1">1. Keep It Fishing</a></li>
+        <li><a href="#g2">2. Respect Everyone</a></li>
+        <li><a href="#g3">3. Post Real Catches</a></li>
+        <li><a href="#g4">4. No Inappropriate Content</a></li>
+        <li><a href="#g5">5. Report Violations</a></li>
+        <li><a href="#g6">6. Privacy Matters</a></li>
+        <li><a href="#g7">7. Host Rules</a></li>
+        <li><a href="#g8">8. Consequences</a></li>
+      </ol>
+    </div>
+
+    <p>FishDex is a community for anglers. These guidelines apply everywhere in the app: clubs, leagues, tournaments, chats, comments, catches and your profile. They are part of the Terms of Service.</p>
+
+    <section id="g1">
+      <h2><span class="sec-num">01</span> Keep It Fishing</h2>
+      <p>FishDex is a community for anglers. Share catches, tips, and fishing experiences.</p>
+    </section>
+
+    <section id="g2">
+      <h2><span class="sec-num">02</span> Respect Everyone</h2>
+      <p>No harassment, threats, hate speech, or bullying. Treat every angler, host and member with respect, including in tournament and league disputes.</p>
+    </section>
+
+    <section id="g3">
+      <h2><span class="sec-num">03</span> Post Real Catches</h2>
+      <p>Only post photos of actual catches. Fake or fraudulent submissions, including faked weights, lengths or photos in a league or tournament, may result in disqualification, content removal or account suspension.</p>
+    </section>
+
+    <section id="g4">
+      <h2><span class="sec-num">04</span> No Inappropriate Content</h2>
+      <p>No nudity, graphic violence, or sexually explicit material of any kind. No illegal content.</p>
+    </section>
+
+    <section id="g5">
+      <h2><span class="sec-num">05</span> Report Violations</h2>
+      <p>If you see something that violates these guidelines, use the Report button. We review all reports within 24 hours. You can also block users from their profile.</p>
+    </section>
+
+    <section id="g6">
+      <h2><span class="sec-num">06</span> Privacy Matters</h2>
+      <p>Do not share other people's personal information (phone number, address, exact location, private messages) without their consent. Do not share invite codes outside the people they are meant for.</p>
+    </section>
+
+    <section id="g7">
+      <h2><span class="sec-num">07</span> Host Rules</h2>
+      <p>Hosts of clubs, leagues and tournaments may add their own rules, which you agree to when you join. Host rules apply in addition to these guidelines and the Terms of Service, never instead of them.</p>
+    </section>
+
+    <section id="g8">
+      <h2><span class="sec-num">08</span> Consequences</h2>
+      <p>There is no tolerance for objectionable content or abusive users. Violations may result in content removal, removal from a club, league or tournament, disqualification, or account suspension.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Questions about these guidelines? Email us at <a href="mailto:support.fishdex@gmail.com" style="color:var(--accent);">support.fishdex@gmail.com</a></p>
+    </section>
+  </div>
+
+  <footer>
+    <span>&copy; 2026 FishDex. All rights reserved.</span>
+    <span><a href="index.html">Legal Home</a> &nbsp;·&nbsp; <a href="terms.html">Terms of Service</a> &nbsp;·&nbsp; <a href="privacy.html">Privacy Policy</a></span>
+  </footer>
+</body>
+</html>
